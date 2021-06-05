@@ -1,0 +1,42 @@
+# Anomalous RL Environments
+In this repo, two sets of environments exist: **OpenAI gym** and **PyBullet3**. The code base is basically based on and forked from
+their corresponding repositories, [here](https://github.com/openai/gym) and [here](https://github.com/bulletphysics/bullet3/), respectively.
+
+For each environment, we generate various types of anomalous trajectories which follow the nominal dynamics until a desired 
+time point upon which there is a switch to anomalous dynamics. The anomalous dynamics correspond to different ways of 
+modifying the state features provided to the controllers through sensors. Note that such modifications can impact the 
+behavior of the controllers, which in turn can impact the evolution of the trajectories. Importantly, we avoid modifications 
+that cause a controller to completely fail (e.g., falling or crashing) soon after the anomaly is introduced. This is because: first,
+such failures are easy to detect, and second, they do not allow testing the robustness abilities of the agent.
+
+The anomalous dynamics that are injected into the trajectory are in a way to resemble the real-world dynamic changes which happen to affect the agent's behavior.
+Such dynamic changes could be due to many reasons. Here, 4 types of modifications that can be applied into the trajectory at a desired time point, each with a different purpose and result. The 4 types are:
+- **IID Noise**: Gaussian noise is added to the features. For each environment, the mean and standard deviation is selected to avoid near-term failure of the controller.
+
+- **Sensor Shutdown**: The output of the sensor changes to zero immediately after the anomaly and stays at zero for the rest of the run. If applied to the most important features for a policy, it could easily degrade the performance. It resembles the case where a sensor fails and needs to be replaced. 
+
+- **Sensor Calibration Failure**: It multiplies the sensor's output by a constant throughout the anomalous run. Similar to the IID noise, for each case study, there is a specific pre-determined constant.
+
+- **Sensor Drift**: Relative to the time step in a trajectory, a small amount of noise is injected into the chosen sensor. As the trajectory progresses, the magnitude of the injected noise increases.
+
+More details and how to use each set of environment is provided in its corresponding folder.
+
+
+## Environments
+From OpenAI gym, only classic control tasks are considered: Acrobot, CartPole, and LunarLander. From PyBullet3, 4 environments
+are considered to be modified: Ant, Hopper, HalfCheetah, and Walker2D.
+
+
+## TODO
+- [ ] Add new types of anomalies to introduce environments with different dynamics
+
+## Citation
+If you ever used this repo in your work, please cite it with:
+```
+@article{danesh2021oodd,
+  title={Out-of-Distribution Dynamics Detection: RL-Relevant Benchmarks and Results},
+  author={Danesh, Mohamad H and Fern, Alan},
+  journal={},
+  year={2021}
+}
+```
