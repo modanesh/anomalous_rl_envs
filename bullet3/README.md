@@ -1,4 +1,4 @@
-In this project, there are anomalous versions of PyBullet physics simulations. Source code is quite similar to the [main
+In this directory, there are anomalous versions of a selected group of PyBullet physics simulations. Source code is quite similar to the [main
 repositoty](https://github.com/bulletphysics/bullet3/). We encourage you to first take a look at the official repo, and then
 start working with this version.
 
@@ -33,7 +33,7 @@ env = DummyVecEnv(
 ```
 
 ## Environments
-Instead of defining new environments, a few new parameters is defined to minimize the effort of designing anomalies for different environments.
+Instead of defining new environments, a few new parameters are defined to minimize the effort of designing anomalies for different environments.
 The new defined parameters are:
 
 - `anomaly_injection`: when to inject anomaly into the trajectory. 

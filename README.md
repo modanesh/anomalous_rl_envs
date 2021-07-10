@@ -2,6 +2,20 @@
 In this repo, two sets of environments exist: **OpenAI gym** and **PyBullet3**. The code base is basically based on and forked from
 their corresponding repositories, [here](https://github.com/openai/gym) and [here](https://github.com/bulletphysics/bullet3/), respectively.
 
+### Citation
+If you ever used this repo in your work, please cite it with:
+```
+@inproceedings{danesh2021oodd,
+  title={Out-of-Distribution Dynamics Detection: RL-Relevant Benchmarks and Results},
+  author={Danesh, Mohamad H and Fern, Alan},
+  booktitle={International Conference on Machine Learning, Uncertainty & Robustness in Deep Learning Workshop},
+  journal={},
+  year={2021}
+}
+```
+
+## Description
+
 For each environment, we generate various types of anomalous trajectories which follow the nominal dynamics until a desired 
 time point upon which there is a switch to anomalous dynamics. The anomalous dynamics correspond to different ways of 
 modifying the state features provided to the controllers through sensors. Note that such modifications can impact the 
@@ -19,7 +33,7 @@ Such dynamic changes could be due to many reasons. Here, 4 types of modification
 
 - **Sensor Drift**: Relative to the time step in a trajectory, a small amount of noise is injected into the chosen sensor. As the trajectory progresses, the magnitude of the injected noise increases.
 
-More details and how to use each set of environment is provided in its corresponding folder.
+More details and how to use each set of environment is provided in its corresponding directory.
 
 
 ## Environments
@@ -27,16 +41,10 @@ From OpenAI gym, only classic control tasks are considered: Acrobot, CartPole, a
 are considered to be modified: Ant, Hopper, HalfCheetah, and Walker2D.
 
 
-## TODO
-- [ ] Add new types of anomalies to introduce environments with different dynamics
+## Baseline
+To use the baseline proposed and discussed in *"Out-of-Distribution Dynamics Detection: RL-Relevant Benchmarks and Results"*,
+you may access it here: [Recurrent Implicit Quantile Networks](https://github.com/modanesh/recurrent_implicit_quantile_networks).
 
-## Citation
-If you ever used this repo in your work, please cite it with:
-```
-@article{danesh2021oodd,
-  title={Out-of-Distribution Dynamics Detection: RL-Relevant Benchmarks and Results},
-  author={Danesh, Mohamad H and Fern, Alan},
-  journal={},
-  year={2021}
-}
-```
+## TODO
+- [ ] Add new types of anomalies to inject into the environment
+
