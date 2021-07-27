@@ -1,6 +1,6 @@
 # Anomalous RL Environments
 
-<!-- ⭐️ [Approved by OpenAI Gym](https://github.com/openai/gym/blob/master/docs/environments.md#anomalous-rl-envs-providing-anomalous-control-tasks) ⭐️ -->
+⭐️ [Approved by OpenAI Gym](https://github.com/openai/gym/blob/master/docs/environments.md#anomalous-rl-envs-providing-anomalous-control-tasks) ⭐️
 
 In this repo, two sets of environments exist: **OpenAI gym** and **PyBullet3**. The codebase is based on and forked from
 their corresponding repositories, [here](https://github.com/openai/gym) and [here](https://github.com/bulletphysics/bullet3/), respectively.
