@@ -18,7 +18,7 @@ Python usage:
 ```
 import gym
 import pybullet_envs
-import env_preparation
+import env_preparation  # implemented in the RIQN repo: https://github.com/modanesh/recurrent_implicit_quantile_networks
 
 random_seed = 15
 anomalous_power = 0.5
